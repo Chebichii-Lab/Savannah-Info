@@ -63,3 +63,22 @@ def customer_detail(request, id):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view(['GET', 'PUT'])
+def order_detail(request, id):
+
+    try:
+        order = Order.objects.get(pk=id)
+    except Order.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        serializer = OrderSerializer(order)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = OrderSerializer(order, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
