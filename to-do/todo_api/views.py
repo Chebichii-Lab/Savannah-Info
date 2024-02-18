@@ -18,5 +18,5 @@ def customer_list(request):
     # get customers
     customers = Customer.objects.all()
     # serialize all customers
-    serializer = CustomerSerializer(customers, many = True)
-    return JsonResponse(serializer.data)
+    serializer = CustomerSerializer(customers, many=True)
+    return JsonResponse(serializer.data, safe=False)
