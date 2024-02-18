@@ -20,3 +20,8 @@ def customer_list(request):
     # serialize all customers
     serializer = CustomerSerializer(customers, many=True)
     return JsonResponse(serializer.data, safe=False)
+
+def order_list(request):
+    orders = Order.objects.all()
+    serializer = OrderSerializer(orders, many=True)
+    return JsonResponse(serializer.data, safe=False)
