@@ -3,8 +3,8 @@ import africastalking
 class SMSSender:
     def __init__(self):
         africastalking.initialize(
-            username='[YOUR_USERNAME_GOES_HERE]',
-            api_key='[YOUR_API_KEY_GOES_HERE]'
+            username='natasha',
+            api_key='88a1738345c397c385e6994d281f7650dacf77f78d8898d9ac22681752d804e2'
         )
         self.sms = africastalking.SMS
 
