@@ -4,6 +4,7 @@ from .serializers import CustomerSerializer, OrderSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from .send_sms import sms_sender
 # class CustomerListCreate(generics.ListCreateAPIView):
 #     queryset = Customer.objects.all()
 #     serializer_class = CustomerSerializer
@@ -44,6 +45,15 @@ def order_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+         # Send SMS when a new order is added
+        message = "New order added: {} - {}".format(serializer.data['item'], serializer.data['amount'])
+        recipients = ["+254726015886"]  # Replace with the recipient's phone number
+        sender = "XXYYZZ"  # Replace with your sender ID or short code
+        sms_sender.send(message, recipients, sender)
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 
 @api_view(['GET', 'PUT'])
