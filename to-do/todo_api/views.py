@@ -49,7 +49,7 @@ def order_list(request):
          # Send SMS when a new order is added
         message = "New order added: {} - {}".format(serializer.data['item'], serializer.data['amount'])
         recipients = ["+254726015886"]  # Replace with the recipient's phone number
-        sender = "XXYYZZ"  # Replace with your sender ID or short code
+        sender = "40563"  # Replace with your sender ID or short code
         sms_sender.send(message, recipients, sender)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
