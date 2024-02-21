@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'oidc_provider',
     'rest_framework',
     'todo_api',
     'django.contrib.admin',
