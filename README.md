@@ -6,9 +6,10 @@
 Create a simple Python Service, design a simple customers and orders database, implement authentication and authorization via OpenID Connect and when an order is added, send the customer an SMS alerting them then write unit tests (with coverage checking) and set up CI + automated CD.
 
 ### Setup and Installation
-To get the code, clone the repository: And run the following commands;
+To get the code, clone the repository: https://github.com/Chebichii-Lab/Savannah-Info.git  And run the following commands;
 
-- $ cd Voting-App 
+- $ cd Savannah-Info 
+- $ cd to-do
 - $ pip install -r requirements.txt
 
 ### Installing and activating Virtual Environment
