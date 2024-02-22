@@ -78,5 +78,31 @@ OpenID Connect is a package that is used to monitor authentication and authoriza
 
 5. Set up the client side in your Django Admin Dashboard.
 
-### 
+### Africa's Talking API
+Set up an SMS sending platform for notications, use the Africa's Talking platform. Sign up and set up username that will be used, generate an API key and set up a phone number that will be receving the SMS notifications. Also set a sender ID short code.
+
+### Test coverage and use of CI/CD
+First run unit tests of all your database tables from the models.py file. To do this, you have to;
+1. Create a tests.py file
+2. Run the tests using the following command;
+    - $ python3 manage.py test
+    Make sure all your tests pass.
+
+Create a CI.yml file in your repository to define your CI workflow using GitHub Actions. Configure the workflow to run your unit tests and coverage checking on every push or pull request to your repository. Use the appropriate actions to install dependencies, run tests, and check coverage.
+
+## Technologies and Dependencies Used
+The technologies used include;
+1. Python(Django)
+2. Africa's Talking
+3. Coverage
+4. Github Actions for Continuous intergration
+5. Kubectl
+6. Minikube
+7. Helm
+8. OpenID Connect
+9. Django Rest Framework
+10. Postman
+
+
+
 
